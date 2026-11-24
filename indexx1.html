@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Alumnos</title>
+    <link rel="stylesheet" href="css/estiloindexx.css">
+</head>
+<body>
+    <div id="app">
+        <h1>REGISTRO DE ALUMNOS</h1>
+
+        <label>Nombre del alumno:</label>
+        <input type="text" v-model="nombre">
+
+        <br><br>
+
+        <label>Edad:</label>
+        <input type="number" v-model="edad">
+
+        <br><br>
+
+        <label>Especialidad:</label>
+        <input type="text" v-model="especialidad">
+
+        <br><br>
+
+        <button @click="registrarAlumno">Registrar alumno</button>
+
+        <h2>LISTA DE ALUMNOS</h2>
+
+        <ul>
+            <li v-for="(alumno, indice) in alumnos" :key="indice">
+                {{ alumno.nombre }} - {{ alumno.edad }} años - {{ alumno.especialidad }}
+            </li>
+        </ul>
+
+        <h3>Total de alumnos registrados: {{ alumnos.length }}</h3>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="css/js/main1.js"></script>
+</body>
+</html>
